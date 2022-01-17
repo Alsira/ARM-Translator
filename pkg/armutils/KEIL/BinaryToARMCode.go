@@ -20,24 +20,23 @@ func BinaryToARMCode(binary_str string) string {
 	/* Check if branch instruction */
 	if (binary_str[27] == '1' && binary_str[26] == '0' && binary_str[25] == '1') {
 	
-		decodeBranchInstruction(binary_str)	
+		return decodeBranchInstruction(binary_str)	
 		
 		/* Check if ARM data processor instruction */
 	} else if (binary_str[27] == '0' && binary_str[26] == '0') {
 
-		decodeDataInstruction(binary_str)
+		return decodeDataInstruction(binary_str)
 
 	} else if (binary_str[27] == '0' && binary_str[26] == '0' && binary_str[25] == '0') {
 
-		decodeBlockMoveInstruction(binary_str)
+		return decodeBlockMoveInstruction(binary_str)
 
 	} else if (binary_str[27] == '1' && binary_str[26] == '0' && binary_str[25] == '1') {
 
-		decodeLSInstruction(binary_str)
+		return decodeLSInstruction(binary_str)
 
 	}
-	
 
-
+	return "NULL"
 
 }

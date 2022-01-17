@@ -12,11 +12,11 @@ func getConditionalCode(nibble int32) string {
 	case 0000:
 		return "EQ"
 		break
-	
+
 	case 0001:
 		return "NE"
 		break
-	
+
 	case 0010:
 		return "CS"
 		break
@@ -60,7 +60,7 @@ func getConditionalCode(nibble int32) string {
 	case 1100:
 		return "GT"
 		break
-	
+
 	case 1101:
 		return "LE"
 		break
@@ -87,7 +87,7 @@ func getDataOpCode(binary int) string {
 
 	// Get the nibble for the op-code
 	nibble := GetBitRange(binary, 21, 24) >> 21
-	
+
 	switch nibble {
 
 	case 0000:
@@ -105,7 +105,7 @@ func getDataOpCode(binary int) string {
 	case 0011:
 		return "RSB"
 		break
-	
+
 	case 0100:
 		return "ADD"
 		break
@@ -168,11 +168,8 @@ func decodeBranchInstruction(binary string) string {
 
 	return ""
 
-
 }
 
 func decodeDataInstruction(binary string) string {
-
-	
 
 }
